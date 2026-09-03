@@ -1,0 +1,140 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'AMF Wien — Vertriebstraining und Beratung für erklärungsbedürftige, technisch komplexe Produkte.' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // z.B. "/AMF-Wien.com" oder "" bei eigener Domain
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#F3EFE7">
+  <title>{title} · AMF Wien</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href={`${base}/styles/global.css`}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "AMF Wien",
+    "founder": {
+      "@type": "Person",
+      "name": "Ante M. Fronius",
+      "jobTitle": "Vertriebstrainer und Berater",
+      "alumniOf": ["Universität Stuttgart", "Massachusetts Institute of Technology", "ESB Business School Reutlingen", "Copenhagen Business School"]
+    },
+    "description": "Vertriebstraining, Coaching und Beratung für Unternehmen mit technisch komplexen, erklärungsbedürftigen Produkten.",
+    "areaServed": ["Deutschland", "Österreich", "Schweiz"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Gießaufgasse 5/15",
+      "postalCode": "1050",
+      "addressLocality": "Wien",
+      "addressCountry": "AT"
+    },
+    "email": "Fronius@AMF-Wien.com",
+    "telephone": "+436706574400",
+    "url": "https://www.amf-wien.com",
+    "knowsAbout": ["Technischer Vertrieb", "Vertriebstraining", "Sales Coaching", "Leadership", "Commercial Excellence"]
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Was unterscheidet AMF Wien von anderen Vertriebstrainings?","acceptedAnswer":{"@type":"Answer","text":"Das Wissen dahinter ist nicht aus einem lizenzierten Konzept übernommen, sondern selbst erarbeitet — aus jahrelanger praktischer Erfahrung über verschiedene Industrien und internationale Teams hinweg, im Umgang mit hochkomplexen Produkten. Zusätzlich basiert die Diagnose vor jedem Training auf einem strukturierten Modell (Können vs. Tun), nicht auf Bauchgefühl."}},
+      {"@type":"Question","name":"Für wen ist das Vertriebstraining geeignet?","acceptedAnswer":{"@type":"Answer","text":"Für Techniker:innen, Fachexpert:innen und Ingenieur:innen im B2B-Vertrieb technisch komplexer Produkte — überall dort, wo Fachwissen vorhanden ist, aber im Kundengespräch nicht in Ergebnisse übersetzt wird."}},
+      {"@type":"Question","name":"Wie läuft die Vertriebsprofil-Diagnose ab?","acceptedAnswer":{"@type":"Answer","text":"Vor dem Training wird erfasst, was jemand kann und was er davon im Alltag tatsächlich umsetzt — anhand von zehn Faktoren statt einer einzigen Note für Vertriebstalent. Daraus ergibt sich, wo eine Maßnahme wirklich ansetzen muss."}},
+      {"@type":"Question","name":"Was kostet ein Vertriebstraining bei AMF Wien?","acceptedAnswer":{"@type":"Answer","text":"Das hängt von der gewählten Stufe (Impuls, Wirkung oder Transformation) und der Teilnehmerzahl ab. Eine direkte Anfrage liefert ein konkretes Angebot."}},
+      {"@type":"Question","name":"Gibt es auch Beratung für ganze Vertriebsorganisationen?","acceptedAnswer":{"@type":"Answer","text":"Ja, über Commercial-Excellence-Consulting-Programme für Teams in komplexen, internationalen Vertriebsorganisationen, von der Analyse bis zur nachhaltigen Verankerung."}},
+      {"@type":"Question","name":"In welchen Branchen ist AMF Wien tätig?","acceptedAnswer":{"@type":"Answer","text":"Schwerpunkt liegt auf technisch komplexen, erklärungsbedürftigen Produkten, u.a. Life Science, Diagnostik, Industrie und Automotive, in Deutschland, Österreich und der Schweiz."}},
+      {"@type":"Question","name":"Warum scheitern viele Trainings ohne nachhaltige Wirkung?","acceptedAnswer":{"@type":"Answer","text":"Weil sie am Seminartag enden. Wirkung entsteht erst, wenn das Gelernte danach im Alltag angewendet und begleitet wird."}},
+      {"@type":"Question","name":"Wie verbessert man die Abschlussquote im technischen Vertrieb?","acceptedAnswer":{"@type":"Answer","text":"Selten durch mehr Produktwissen allein, meistens durch bessere Gesprächsführung an der Stelle, an der Kunden aktuell abspringen."}},
+      {"@type":"Question","name":"Funktioniert die Methode auch bei großen, internationalen Vertriebsteams?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Diagnose ist individuell je Person, skaliert aber genauso auf große, international verteilte Teams — jede Person bekommt den zur eigenen Fähigkeitslücke passenden Trainingspfad."}},
+      {"@type":"Question","name":"Kann ich mich auch einzeln für ein Seminar anmelden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Neben Inhouse-Trainings für einzelne Unternehmen gibt es offene Seminare in Städten wie Wien, Stuttgart und München, mit 10 bis 12 Teilnehmenden aus unterschiedlichen Unternehmen."}}
+    ]
+  })} />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="logo" href={`${base}/`}>AMF <span class="dot">·</span> Wien</a>
+      <nav class="nav-links">
+        <a href={`${base}/#angebote`}>Angebote</a>
+        <a href={`${base}/#ueber`}>Über mich</a>
+        <a href={`${base}/blog/`}>Insights</a>
+        <a href={`${base}/#kontakt`}>Kontakt</a>
+      </nav>
+      <a class="nav-cta" href={`${base}/#kontakt`}>Gespräch vereinbaren</a>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer id="kontakt">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">AMF · Wien</div>
+        <div class="footer-col">Gießaufgasse 5/15<br>1050 Wien, Österreich</div>
+      </div>
+      <div class="footer-col">
+        <a href="mailto:Fronius@AMF-Wien.com">Fronius@AMF-Wien.com</a><br>
+        +43 670 657 4400
+      </div>
+      <div class="footer-col">
+        <a href="https://www.linkedin.com/company/amf-wien" target="_blank" rel="noopener">LinkedIn — AMF Wien</a><br>
+        <a href={`${base}/#kontakt`}>Gespräch vereinbaren</a>
+      </div>
+      <div class="footer-col">
+        <a href={`${base}/impressum/`}>Impressum</a><br>
+        <a href={`${base}/datenschutz/`}>Datenschutzerklärung</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {new Date().getFullYear()} DI Ante M. Fronius, MBA</span>
+      <span>AMF-Wien.com</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var revealEls = document.querySelectorAll('.reveal');
+      if('IntersectionObserver' in window){
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, {threshold:0.15});
+        revealEls.forEach(function(el){ io.observe(el); });
+      } else {
+        revealEls.forEach(function(el){ el.classList.add('in'); });
+      }
+
+      if(!reduceMotion){
+        var depthEls = document.querySelectorAll('[data-depth]');
+        var ticking = false;
+        function updateParallax(){
+          var vh = window.innerHeight;
+          depthEls.forEach(function(el){
+            var depth = parseFloat(el.getAttribute('data-depth')) || 0.3;
+            var rect = el.getBoundingClientRect();
+            var progress = (vh/2 - (rect.top + rect.height/2)) / vh;
+            el.style.transform = 'translateY(' + (progress * depth * 50).toFixed(1) + 'px)';
+          });
+          ticking = false;
+        }
+        window.addEventListener('scroll', function(){
+          if(!ticking){ requestAnimationFrame(updateParallax); ticking = true; }
+        }, {passive:true});
+        updateParallax();
+      }
+    })();
+  </script>
+</body>
+</html>

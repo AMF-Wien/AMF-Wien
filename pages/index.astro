@@ -1,0 +1,256 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+<Layout title="Vertrieb für erklärungsbedürftige Produkte">
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="eyebrow">Vertrieb · Wirkung · Wachstum <span style="opacity:.6">/ DACH</span></div>
+      <h1>So <em>souverän</em> verkaufen,<br>wie Sie Technik erklären.</h1>
+      <p class="lede">Vertriebstraining und Beratung für Unternehmen mit erklärungsbedürftigen, technisch komplexen Produkten — von einem Praktiker, gestützt auf ein wissenschaftlich fundiertes Diagnosemodell.</p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#kontakt">Gespräch vereinbaren</a>
+        <a class="btn-secondary" href="#angebote">Angebote ansehen</a>
+      </div>
+
+      <div class="float-field" id="floatField">
+        <div class="fcard fc1" data-depth="0.35" style="width:270px;">
+          <div class="fc-label">Was jemand kann vs. was er tut</div>
+          <div class="fc-value" style="font-size:19px;line-height:1.35;">10 Faktoren, einzeln gemessen</div>
+          <div class="fc-sub">zeigt genau, wo eine Maßnahme wirklich ansetzen muss</div>
+        </div>
+        <div class="fcard fc2" data-depth="0.55" style="width:260px;">
+          <div class="fc-label">Individuell, nicht pauschal</div>
+          <div class="fc-value" style="font-size:19px;line-height:1.35;">Vom Einzelcoaching bis zur Großorganisation</div>
+          <div class="fc-sub">je nach Fähigkeitslücke zugewiesen, nicht dasselbe Programm für alle</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="strip-inner">
+      <span><b>Bewährt</b> in internationalen Konzernstrukturen, nicht nur in der Theorie</span>
+      <span><b>Von Einzelcoaching</b> bis zur internationalen <b>Großorganisation</b></span>
+      <span><b>Erprobt</b> in hochkomplexen Branchen — Life Science, Diagnostik, Maschinenbau, IT, etc.</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-head reveal">
+      <div class="kicker">Herausforderung</div>
+      <h2>Gute Strategien scheitern selten an der Strategie.</h2>
+    </div>
+    <ul class="pain-list reveal">
+      <li>Technisches Fachwissen überzeugt in der Präsentation — trotzdem bleibt die Abschlussquote hinter den Erwartungen zurück</li>
+      <li>Nach dem Training läuft im Alltag alles wie vorher — drei Monate später ist nichts hängengeblieben</li>
+      <li>Erfahrene Vertriebsmitarbeitende bleiben unter ihren Möglichkeiten, ohne dass jemand genau sagen kann, warum</li>
+      <li>Wer im Buying Center wirklich entscheidet, wird oft erst nach der Angebotsabgabe klar — wenn es zu spät ist</li>
+    </ul>
+    <p class="pain-punch reveal">Sie brauchen nicht mehr Theorie. Sie brauchen wirksame Umsetzung.</p>
+  </section>
+
+  <section style="background:var(--card);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding-top:80px;padding-bottom:80px;">
+    <div class="section-head reveal" style="margin-bottom:40px;">
+      <div class="kicker">Nutzen</div>
+      <h2>Was sich für Ihr Team verändert.</h2>
+    </div>
+    <div class="nutzen-grid reveal">
+      <div class="nutzen-card"><div class="num">Mehr Wirksamkeit</div><div class="label">Bessere Gespräche, bessere Entscheidungen, bessere Ergebnisse</div></div>
+      <div class="nutzen-card"><div class="num">Mehr Umsetzung</div><div class="label">Veränderung wird Teil des Alltags, nicht nur des Seminarraums</div></div>
+      <div class="nutzen-card"><div class="num">Skalierbare Individualisierung</div><div class="label">Auch bei großen Teams bleibt das Vorgehen individuell</div></div>
+      <div class="nutzen-card"><div class="num">Mehr Klarheit für Führung</div><div class="label">Sichtbar, wo eine Maßnahme wirklich ansetzen muss</div></div>
+    </div>
+  </section>
+
+  <section id="ueber">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="kicker">Über mich</div>
+        <h2 style="margin-bottom:28px;">Kein Trainer, der nur trainiert.</h2>
+        <p>Mein Wissen über Vertrieb ist nicht aus einem vorgefertigten Konzept übernommen, sondern selbst erarbeitet: aus jahrelanger praktischer Erfahrung über verschiedene Industrien und große internationale Teams hinweg, im Umgang mit hochkomplexen Produkten und Lösungen. Genau da liegt oft die eigentliche Lücke: Die fachlich stärksten Mitarbeitenden scheitern selten am Wissen — sondern daran, was sie im Gespräch damit tun. Hier setzt meine Arbeit an.</p>
+        <p>Deshalb ist meine Methode potenzialgetrieben statt umsatzgetrieben: Bevor trainiert wird, wird gemessen, wo die eigentliche Lücke liegt — Wissen, Gesprächsführung oder Führung. Und deshalb verbinde ich Strategie, Vertrieb und Leadership aus einer Hand, in drei Ausbaustufen vom ersten Impuls bis zur langfristigen Begleitung.</p>
+        <p style="margin-bottom:10px;">Diese Sichtweise stammt aus der Praxis, nicht aus der Theorie:</p>
+        <ul style="margin:0 0 20px;padding-left:20px;color:var(--ink-soft);font-size:16.5px;line-height:1.8;">
+          <li>Vertriebsorganisationen in mehreren Ländern von Grund auf aufgebaut, nicht nur übernommen</li>
+          <li>Internationale, interkulturelle Teams über Kontinente hinweg geführt und weiterentwickelt</li>
+          <li>Geschäftsverantwortung in unterschiedlichen Branchen übernommen — von Life Science über Diagnostik bis Industrie und Automotive</li>
+        </ul>
+        <p>Hintergrund: Maschinenbau (Universität Stuttgart, MIT Boston), MBA International Management (ESB Reutlingen &amp; Copenhagen Business School).</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-card"><div class="num">Mehrfach</div><div class="label">international aufgebaute Vertriebsorganisationen und geführte Teams</div></div>
+        <div class="stat-card"><div class="num">Praxis</div><div class="label">Langjährige Erfahrung im internationalen B2B-Vertrieb, nicht nur Theorie</div></div>
+        <div class="stat-card"><div class="num">Nische</div><div class="label">Technisch komplexe, erklärungsbedürftige Produkte — nicht Vertrieb allgemein</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="methode" style="padding-top:0;">
+    <div class="section-head reveal">
+      <div class="kicker">Der Unterschied, der zählt</div>
+      <h2>Können ist nicht dasselbe wie Tun.</h2>
+      <p style="font-size:16.5px;line-height:1.65;color:var(--ink-soft);margin-top:20px;">Zwei Vertriebsmitarbeitende mit demselben Potenzial können völlig unterschiedliche Ergebnisse liefern. Bevor trainiert wird, wird deshalb gemessen: Was kann jemand wirklich — und was setzt er davon im Arbeitsalltag tatsächlich um? Diese Unterscheidung entscheidet, wo ein Training ansetzen muss. Nicht Bauchgefühl.</p>
+    </div>
+    <div class="showcase reveal" id="showcase">
+      <div class="sc-card sc1" data-depth="0.3">
+        <div class="sc-title">Beispielhafte Darstellung</div>
+        <div class="bar-row"><span style="width:100px;">Können</span><div class="bar-track"><div class="bar-fill" style="width:74%"></div></div></div>
+        <div class="bar-row"><span style="width:100px;">Tun</span><div class="bar-track"><div class="bar-fill" style="width:58%"></div></div></div>
+        <div class="fc-sub" style="margin-top:10px;">Veranschaulicht das Prinzip — reale Profile unterscheiden sich je nach Person und Team.</div>
+      </div>
+      <div class="sc-card sc2" data-depth="0.5">
+        <div class="sc-title">Worauf wir zusätzlich achten</div>
+        <div class="fc-sub" style="line-height:1.6;color:var(--ink);">Riskante Kombinationen — z.B. starkes Durchsetzen bei wenig Kundennähe — bevor sie zum Problem werden.</div>
+      </div>
+      <div class="sc-card sc3" data-depth="0.4">
+        <div class="sc-title">Was daraus folgt</div>
+        <div class="fc-sub" style="line-height:1.6;color:var(--ink);">Jede Person bekommt das Training für ihre tatsächliche Lücke — nicht das gleiche Programm wie alle anderen.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="angebote" style="background:var(--card);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);">
+    <div class="section-head reveal">
+      <div class="kicker">Angebote</div>
+      <h2>Zwei Wege, mit demselben Fundament.</h2>
+    </div>
+    <div class="offers reveal">
+      <div class="offer-row">
+        <div class="offer-num">01</div>
+        <div class="offer-name">Vertriebstraining</div>
+        <div class="offer-desc">Verkaufstraining für Techniker:innen, Fachexpert:innen und Ingenieur:innen — Gespräche führen statt Produkte erklären. Drei Stufen, je nach gewünschter Tiefe:
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
+            <div><b style="color:var(--ink);">Impuls</b> <span style="color:var(--ink-soft);">— das 2-Tages-Seminar selbst</span></div>
+            <div><b style="color:var(--ink);">Wirkung</b> <span style="color:var(--ink-soft);">— + 2-Monate-Transferprogramm mit Gruppenbegleitung</span></div>
+            <div><b style="color:var(--ink);">Transformation</b> <span style="color:var(--ink-soft);">— + 12-Monate-Begleitung, KI-gestütztes Coaching on the Job, Reporting für Führungskräfte</span></div>
+          </div>
+          <p style="margin-top:14px;font-style:italic;color:var(--ink-soft);">Vom ersten Impuls bis zur unternehmensweiten Transformation — wächst mit Ihrem Bedarf.</p>
+          <p style="margin-top:10px;color:var(--ink-soft);">Impuls auch als <b style="color:var(--ink);">offenes Seminar</b> buchbar — in Wien, Stuttgart, München u.a., mit 10–12 Teilnehmenden aus unterschiedlichen Unternehmen. Ideal für Einzelanmeldungen ohne eigenes Firmenteam.</p>
+        </div>
+      </div>
+      <div class="offer-row">
+        <div class="offer-num">02</div>
+        <div class="offer-name">Consulting</div>
+        <div class="offer-desc">Commercial-Excellence-Programme für Teams in komplexen, internationalen Vertriebsorganisationen — von der Analyse bis zur nachhaltigen Verankerung.
+          <div class="tag">Projektbasiert</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head reveal">
+      <div class="kicker">Warum AMF Wien</div>
+      <h2>Was AMF Wien unterscheidet.</h2>
+    </div>
+    <ul class="check-list reveal">
+      <li>Individuelle Betreuung, die auch bei großen internationalen Teams skaliert</li>
+      <li>Technisches Verständnis durch den eigenen Maschinenbau-Hintergrund</li>
+      <li>Ein strukturiertes Diagnosemodell (Können vs. Tun) statt Bauchgefühl</li>
+      <li>Fokus auf nachhaltige Umsetzung im Alltag, nicht nur auf den Seminartag</li>
+      <li>Eigenständig entwickelte Methodik statt lizenziertes Standardformat</li>
+    </ul>
+  </section>
+
+  <div class="quote-band">
+    <div class="quote-inner reveal">
+      <blockquote>„Sie verstehen jedes technische Detail — aber der Kunde sagt: Wir melden uns.“ Genau da setzt das Training an: Gespräche führen statt Produkte erklären.</blockquote>
+      <div class="quote-attr">— Leitmotiv aus dem Seminar für technischen Vertrieb</div>
+    </div>
+  </div>
+
+  <section style="background:var(--card);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);">
+    <div class="section-head reveal">
+      <div class="kicker">Referenzen</div>
+      <h2>Was Teilnehmende danach sagen.</h2>
+    </div>
+    <div class="blog-grid reveal" style="margin-bottom:20px;">
+      <div class="blog-card" style="justify-content:space-between;">
+        <div class="blog-excerpt" style="font-size:15px;color:var(--ink);">„Es fällt mir nun leichter, Struktur in Gespräche hereinzubringen, anstatt 'nerdy' zu wirken. Und vor allem den Kunden erzählen zu lassen.“</div>
+        <div class="blog-date">Jaroslaw H.</div>
+      </div>
+      <div class="blog-card" style="justify-content:space-between;">
+        <div class="blog-excerpt" style="font-size:15px;color:var(--ink);">„Früher war ein Kunde, den wir beliefern, bereits ausgereizt. Heute schaue ich aktiv auf die Potenziale.“</div>
+        <div class="blog-date">Christian D.</div>
+      </div>
+      <div class="blog-card" style="justify-content:space-between;">
+        <div class="blog-excerpt" style="font-size:15px;color:var(--ink);">„Die Kunden werden von mir nun besser kategorisiert, somit kann ich auch mein Potenzial viel besser ausnutzen.“</div>
+        <div class="blog-date">Thorsten L.</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-soft);max-width:640px;margin-bottom:14px;">Alle Zitate stammen von Anwendungstechniker:innen und technischen Vertriebsmitarbeitenden im B2B-Umfeld, die an einem Seminar teilgenommen haben.</p>
+    
+  </section>
+
+  <section id="faq">
+    <div class="section-head reveal">
+      <div class="kicker">Häufige Fragen</div>
+      <h2>Was andere vorher wissen wollen.</h2>
+    </div>
+    <div class="reveal" style="max-width:820px;">
+      <details class="faq-item">
+        <summary>Was unterscheidet AMF Wien von anderen Vertriebstrainings?</summary>
+        <p>Das Wissen dahinter ist nicht aus einem lizenzierten Konzept übernommen, sondern selbst erarbeitet — aus jahrelanger praktischer Erfahrung über verschiedene Industrien und internationale Teams hinweg, im Umgang mit hochkomplexen Produkten. Zusätzlich basiert die Diagnose vor jedem Training auf einem strukturierten Modell (Können vs. Tun), nicht auf Bauchgefühl.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Für wen ist das Vertriebstraining geeignet?</summary>
+        <p>Für Techniker:innen, Fachexpert:innen und Ingenieur:innen im B2B-Vertrieb technisch komplexer Produkte — überall dort, wo Fachwissen vorhanden ist, aber im Kundengespräch nicht in Ergebnisse übersetzt wird.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wie läuft die Vertriebsprofil-Diagnose ab?</summary>
+        <p>Vor dem Training wird erfasst, was jemand kann und was er davon im Alltag tatsächlich umsetzt — anhand von zehn Faktoren statt einer einzigen Note für "Vertriebstalent". Daraus ergibt sich, wo eine Maßnahme wirklich ansetzen muss.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Was kostet ein Vertriebstraining bei AMF Wien?</summary>
+        <p>Das hängt von der gewählten Stufe (Impuls, Wirkung oder Transformation) und der Teilnehmerzahl ab. Sprechen Sie uns direkt an für ein konkretes Angebot.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Gibt es auch Beratung für ganze Vertriebsorganisationen?</summary>
+        <p>Ja — über Commercial-Excellence-Consulting-Programme für Teams in komplexen, internationalen Vertriebsorganisationen, von der Analyse bis zur nachhaltigen Verankerung.</p>
+      </details>
+      <details class="faq-item">
+        <summary>In welchen Branchen ist AMF Wien tätig?</summary>
+        <p>Schwerpunkt liegt auf technisch komplexen, erklärungsbedürftigen Produkten — u.a. Life Science, Diagnostik, Industrie und Automotive, in Deutschland, Österreich und der Schweiz.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Warum scheitern viele Trainings ohne nachhaltige Wirkung?</summary>
+        <p>Weil sie am Seminartag enden. Wirkung entsteht erst, wenn das Gelernte danach im Alltag angewendet und begleitet wird — genau dafür sind die Stufen Wirkung und Transformation gedacht.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wie verbessert man die Abschlussquote im technischen Vertrieb?</summary>
+        <p>Selten durch mehr Produktwissen allein. Meistens durch bessere Gesprächsführung an der Stelle, an der Kunden aktuell abspringen — genau das zeigt die Vertriebsprofil-Diagnose vorab auf.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Funktioniert die Methode auch bei großen, internationalen Vertriebsteams?</summary>
+        <p>Ja. Die Diagnose ist individuell je Person, skaliert aber genauso auf große, international verteilte Teams — jede:r bekommt den zur eigenen Fähigkeitslücke passenden Trainingspfad, unabhängig von der Teamgröße.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Kann ich mich auch einzeln für ein Seminar anmelden?</summary>
+        <p>Ja. Neben Inhouse-Trainings für einzelne Unternehmen gibt es offene Seminare in Städten wie Wien, Stuttgart und München — dort lernen Sie gemeinsam mit 10–12 Teilnehmenden aus unterschiedlichen Unternehmen.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="insights">
+    <div class="section-head reveal">
+      <div class="kicker">Insights</div>
+      <h2>Aus der Praxis, für die Praxis.</h2>
+    </div>
+    <div class="blog-grid reveal">
+      {posts.map((post) => (
+        <article class="blog-card">
+          <div class="blog-date">{post.data.date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long' })}</div>
+          <div class="blog-title">{post.data.title}</div>
+          <div class="blog-excerpt">{post.data.excerpt}</div>
+          <a class="blog-more" href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/blog/${post.slug}/`}>Weiterlesen →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
