@@ -14,7 +14,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       <h1>So <em>souverän</em> verkaufen,<br>wie Sie Technik erklären.</h1>
       <p class="lede">Vertriebstraining und Beratung für Unternehmen mit erklärungsbedürftigen, technisch komplexen Produkten — von einem Praktiker, gestützt auf ein wissenschaftlich fundiertes Diagnosemodell.</p>
       <div class="hero-ctas">
-        <a class="btn-primary" href="#kontakt">Gespräch vereinbaren</a>
+        <a class="btn-primary" href="mailto:Fronius@AMF-Wien.com?subject=Gespr%C3%A4ch%20vereinbaren">Gespräch vereinbaren</a>
         <a class="btn-secondary" href="#angebote">Angebote ansehen</a>
       </div>
 
@@ -125,10 +125,19 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         <div class="offer-num">01</div>
         <div class="offer-name">Vertriebstraining</div>
         <div class="offer-desc">Verkaufstraining für Techniker:innen, Fachexpert:innen und Ingenieur:innen — Gespräche führen statt Produkte erklären. Drei Stufen, je nach gewünschter Tiefe:
-          <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;">
-            <div><b style="color:var(--ink);">Impuls</b> <span style="color:var(--ink-soft);">— das 2-Tages-Seminar selbst</span></div>
-            <div><b style="color:var(--ink);">Wirkung</b> <span style="color:var(--ink-soft);">— + 2-Monate-Transferprogramm mit Gruppenbegleitung</span></div>
-            <div><b style="color:var(--ink);">Transformation</b> <span style="color:var(--ink-soft);">— + 12-Monate-Begleitung, KI-gestütztes Coaching on the Job, Reporting für Führungskräfte</span></div>
+          <div class="tier-grid">
+            <div class="tier-card">
+              <div class="tier-name">Impuls</div>
+              <div class="tier-desc">Das 2-Tages-Seminar selbst</div>
+            </div>
+            <div class="tier-card t2">
+              <div class="tier-name">Wirkung</div>
+              <div class="tier-desc">+ 2-Monate-Transferprogramm mit Gruppenbegleitung</div>
+            </div>
+            <div class="tier-card featured">
+              <div class="tier-name">Transformation</div>
+              <div class="tier-desc">+ 12-Monate individuelle Begleitung, KI-gestütztes Coaching on the Job, Reporting für Führungskräfte</div>
+            </div>
           </div>
           <p style="margin-top:14px;font-style:italic;color:var(--ink-soft);">Vom ersten Impuls bis zur unternehmensweiten Transformation — wächst mit Ihrem Bedarf.</p>
           <p style="margin-top:10px;color:var(--ink-soft);">Impuls auch als <b style="color:var(--ink);">offenes Seminar</b> buchbar — in Wien, Stuttgart, München u.a., mit 10–12 Teilnehmenden aus unterschiedlichen Unternehmen. Ideal für Einzelanmeldungen ohne eigenes Firmenteam.</p>
@@ -137,8 +146,11 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       <div class="offer-row">
         <div class="offer-num">02</div>
         <div class="offer-name">Consulting</div>
-        <div class="offer-desc">Commercial-Excellence-Programme für Teams in komplexen, internationalen Vertriebsorganisationen — von der Analyse bis zur nachhaltigen Verankerung.
-          <div class="tag">Projektbasiert</div>
+        <div class="offer-desc">
+          <div class="consult-card">
+            Commercial-Excellence-Programme für Teams in komplexen, internationalen Vertriebsorganisationen — von der Analyse bis zur nachhaltigen Verankerung.
+            <div class="tag">Projektbasiert</div>
+          </div>
         </div>
       </div>
     </div>
