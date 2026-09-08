@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 const { title, description = 'AMF Wien — Vertriebstraining und Beratung für erklärungsbedürftige, technisch komplexe Produkte.' } = Astro.props;
-const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // z.B. "/AMF-Wien" oder "" bei eigener Domain
+const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // z.B. "/AMF-Wien.com" oder "" bei eigener Domain
 ---
 <!DOCTYPE html>
 <html lang="de">
@@ -18,6 +18,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // z.B. "/AMF-Wien" od
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href={`${base}/styles/global.css`}>
+  <link rel="canonical" href={`https://www.amf-wien.com${Astro.url.pathname}`}>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AMF Wien">
+  <meta property="og:title" content={`${title} · AMF Wien`}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content="https://www.amf-wien.com/og-image.png">
+  <meta property="og:url" content={`https://www.amf-wien.com${Astro.url.pathname}`}>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={`${title} · AMF Wien`}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content="https://www.amf-wien.com/og-image.png">
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -81,15 +92,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // z.B. "/AMF-Wien" od
     <div class="footer-grid">
       <div>
         <div class="footer-brand">AMF · Wien</div>
-        <div class="footer-col" style="margin-bottom:6px;color:var(--brass-deep);letter-spacing:.04em;">Wien · Stuttgart · München</div>
-        <div class="footer-col">Gießaufgasse 5/15<br>1050 Wien, Österreich</div>
+        <div class="footer-col" style="color:var(--brass-deep);letter-spacing:.04em;">Wien · Stuttgart · München</div>
       </div>
       <div class="footer-col">
         <a href="#" class="email-link" data-user="Fronius" data-domain="AMF-Wien.com">E-Mail senden</a><br>
         +43 670 657 4400
       </div>
       <div class="footer-col">
-        <a href="https://www.linkedin.com/company/amf-wien" target="_blank" rel="noopener">LinkedIn — AMF Wien</a><br>
+        <a href="https://www.linkedin.com/company/amfwien" target="_blank" rel="noopener">LinkedIn — AMF Wien</a><br>
         <a href="mailto:Fronius@AMF-Wien.com?subject=Gespr%C3%A4ch%20vereinbaren">Gespräch vereinbaren</a>
       </div>
       <div class="footer-col">
@@ -107,6 +117,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, ''); // z.B. "/AMF-Wien" od
     (function(){
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+      // E-Mail-Adresse erst im Browser zusammensetzen, statt im Quelltext sichtbar zu machen
       document.querySelectorAll('.email-link').forEach(function(el){
         var addr = el.dataset.user + '@' + el.dataset.domain;
         el.addEventListener('click', function(e){
