@@ -139,8 +139,30 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
               <div class="tier-desc">+ 12-Monate individuelle Begleitung, KI-gestütztes Coaching on the Job, Reporting für Führungskräfte</div>
             </div>
           </div>
+
+          <div class="curriculum-grid">
+            <div>
+              <div class="curriculum-title">Wirkung im Kundenkontakt</div>
+              <div class="curriculum-desc">Strukturierte Gesprächsführung, klare Sprache, überzeugende Präsentation von Inhalten, Einwandbehandlung, Abschlusslogik.</div>
+            </div>
+            <div>
+              <div class="curriculum-title">Vertriebssteuerung für komplexe Produkte</div>
+              <div class="curriculum-desc">Der 5-Stufen-B2B-Vertriebsprozess:</div>
+              <ol class="curriculum-steps">
+                <li>Markt- &amp; Kundenanalyse</li>
+                <li>Zielkundenauswahl &amp; Ansprache</li>
+                <li>Verhandlungsvorbereitung &amp; Gesprächsführung</li>
+                <li>Abschluss &amp; Customer Journey</li>
+                <li>After Sales &amp; Bestandskunden</li>
+              </ol>
+            </div>
+          </div>
+          <p class="curriculum-punch">Das Seminar verbindet operative Gesprächsstärke mit strategischer Vertriebssteuerung.</p>
+
           <p style="margin-top:14px;font-style:italic;color:var(--ink-soft);">Vom ersten Impuls bis zur unternehmensweiten Transformation — wächst mit Ihrem Bedarf.</p>
           <p style="margin-top:10px;color:var(--ink-soft);">Impuls auch als <b style="color:var(--ink);">offenes Seminar</b> buchbar — in Wien, Stuttgart, München u.a., mit 10–12 Teilnehmenden aus unterschiedlichen Unternehmen. Ideal für Einzelanmeldungen ohne eigenes Firmenteam.</p>
+
+          <div class="partner-strip">Erprobt u.a. über <b>Haufe Akademie</b> · <b>St. Gallen Business School</b> · <b>Boston Business School</b></div>
         </div>
       </div>
       <div class="offer-row">
@@ -182,7 +204,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       <div class="kicker">Referenzen</div>
       <h2>Was Teilnehmende danach sagen.</h2>
     </div>
-    <div class="blog-grid reveal" style="margin-bottom:20px;">
+    <div class="blog-grid reveal" style="margin-bottom:20px;grid-template-columns:repeat(4,1fr);">
       <div class="blog-card" style="justify-content:space-between;">
         <div class="blog-excerpt" style="font-size:15px;color:var(--ink);">„Es fällt mir nun leichter, Struktur in Gespräche hereinzubringen, anstatt 'nerdy' zu wirken. Und vor allem den Kunden erzählen zu lassen.“</div>
         <div class="blog-date">Jaroslaw H.</div>
@@ -195,9 +217,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         <div class="blog-excerpt" style="font-size:15px;color:var(--ink);">„Die Kunden werden von mir nun besser kategorisiert, somit kann ich auch mein Potenzial viel besser ausnutzen.“</div>
         <div class="blog-date">Thorsten L.</div>
       </div>
+      <div class="blog-card" style="justify-content:space-between;">
+        <div class="blog-excerpt" style="font-size:15px;color:var(--ink);">„Das Training hat mir tatsächlich geholfen, besser mit Kunden zu kommunizieren und Beziehungen aufzubauen.“</div>
+        <div class="blog-date">Manuel S.</div>
+      </div>
     </div>
     <p style="font-size:13px;color:var(--ink-soft);max-width:640px;margin-bottom:14px;">Alle Zitate stammen von Anwendungstechniker:innen und technischen Vertriebsmitarbeitenden im B2B-Umfeld, die an einem Seminar teilgenommen haben.</p>
-    
   </section>
 
   <section id="faq">
