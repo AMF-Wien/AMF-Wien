@@ -121,28 +121,67 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
       <h2>Zwei Wege, mit demselben Fundament.</h2>
     </div>
     <div class="offers reveal">
-      <div class="offer-row">
-        <div class="offer-num">01</div>
-        <div class="offer-name">Vertriebstraining</div>
-        <div class="offer-desc">Verkaufstraining für Techniker:innen, Fachexpert:innen und Ingenieur:innen — Gespräche führen statt Produkte erklären. Drei Stufen, je nach gewünschter Tiefe:
-          <div class="tier-grid">
-            <div class="tier-card">
-              <div class="tier-name">Impuls</div>
-              <div class="tier-desc">Das 2-Tages-Seminar selbst</div>
+      <div class="offer-block">
+        <div class="offer-row" style="border-top:none;padding-top:0;padding-bottom:28px;">
+          <div class="offer-num">01</div>
+          <div class="offer-name">Vertriebstraining</div>
+          <div class="offer-desc">Für Techniker:innen, Fachexpert:innen und Ingenieur:innen — Gespräche führen statt Produkte erklären. Drei aufeinander aufbauende Stufen.</div>
+        </div>
+
+        <div class="path">
+          <div class="path-head">
+            <div class="path-kicker">Ausgangslage</div>
+            <div class="path-kicker">Entwicklungsweg</div>
+            <div class="path-kicker">Business Impact</div>
+          </div>
+
+          <div class="path-row r1">
+            <div class="path-cell problem" data-label="Ausgangslage">Das Fachwissen ist da — im Kundengespräch kommt es nicht an.</div>
+            <div class="path-cell stage" data-label="Entwicklungsweg">
+              <div class="stage-label">Stufe 01</div>
+              <div class="stage-name">Impuls</div>
+              2-Tages-Seminar: Gesprächsführung, Einwandbehandlung und Abschlusslogik im Kundenkontakt
             </div>
-            <div class="tier-card t2">
-              <div class="tier-name">Wirkung</div>
-              <div class="tier-desc">+ 2-Monate-Transferprogramm mit Gruppenbegleitung</div>
-            </div>
-            <div class="tier-card featured">
-              <div class="tier-name">Transformation</div>
-              <div class="tier-desc">+ 12-Monate individuelle Begleitung, KI-gestütztes Coaching on the Job, Reporting für Führungskräfte</div>
+            <div class="path-cell impact" data-label="Business Impact">
+              <div class="impact-title">Souveräner im Kundengespräch</div>
+              <div class="impact-sub">Struktur, klare Sprache, überzeugende Argumentation</div>
             </div>
           </div>
-          <p style="margin-top:14px;font-style:italic;color:var(--ink-soft);">Vom ersten Impuls bis zur unternehmensweiten Transformation — wächst mit Ihrem Bedarf.</p>
-          <p style="margin-top:10px;color:var(--ink-soft);">Impuls auch als <b style="color:var(--ink);">offenes Seminar</b> buchbar — in Wien, Stuttgart, München u.a., mit 10–12 Teilnehmenden aus unterschiedlichen Unternehmen. Ideal für Einzelanmeldungen ohne eigenes Firmenteam.</p>
+
+          <div class="path-row r2">
+            <div class="path-cell problem" data-label="Ausgangslage">Nach dem Seminartag verpufft, was gelernt wurde.</div>
+            <div class="path-cell stage" data-label="Entwicklungsweg">
+              <div class="stage-label">Stufe 02</div>
+              <div class="stage-name">Wirkung</div>
+              + 2-Monate-Transferprogramm mit Gruppenbegleitung
+            </div>
+            <div class="path-cell impact" data-label="Business Impact">
+              <div class="impact-title">Umsetzung im Alltag</div>
+              <div class="impact-sub">Gelerntes wird angewendet und begleitet, nicht nur gehört</div>
+            </div>
+          </div>
+
+          <div class="path-row r3">
+            <div class="path-cell problem" data-label="Ausgangslage">Niemand sieht, ob sich Verhalten wirklich verändert.</div>
+            <div class="path-cell stage" data-label="Entwicklungsweg">
+              <div class="stage-label">Stufe 03</div>
+              <div class="stage-name">Transformation</div>
+              + 12 Monate individuelle Begleitung, KI-gestütztes Coaching on the Job, Reporting für Führungskräfte
+            </div>
+            <div class="path-cell impact" data-label="Business Impact">
+              <div class="impact-title">Nachhaltige Veränderung</div>
+              <div class="impact-sub">individuell begleitet und für Führung sichtbar</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="path-foot offer-desc">
+          <p style="margin:0 0 10px;font-style:italic;">Jede Stufe baut auf der vorherigen auf — wächst mit Ihrem Bedarf.</p>
+          <p style="margin:0;">Impuls auch als <b style="color:var(--ink);">offenes Seminar</b> buchbar — in Wien, Stuttgart, München u.a., mit 10–12 Teilnehmenden aus unterschiedlichen Unternehmen. Ideal für Einzelanmeldungen ohne eigenes Firmenteam.</p>
+          <div class="partner-strip">Erprobt u.a. über <b>Haufe Akademie</b> · <b>St. Gallen Business School</b> · <b>Boston Business School</b></div>
         </div>
       </div>
+
       <div class="offer-row">
         <div class="offer-num">02</div>
         <div class="offer-name">Consulting</div>
