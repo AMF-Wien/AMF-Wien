@@ -239,3 +239,8 @@
   .path-row.r3 .path-cell.stage::before{color:var(--brass);}
 }
   :focus-visible{outline:2px solid var(--brass-deep);outline-offset:2px;}
+
+.portrait{position:relative;max-width:340px;margin:-24px 0 -70px auto;z-index:0;pointer-events:none;}
+.portrait img{width:100%;height:auto;display:block;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);mask-image:linear-gradient(to bottom,#000 55%,transparent 100%);}
+.about-grid .stat-card{position:relative;z-index:1;}
+@media (max-width:900px){ .portrait{max-width:260px;margin:0 auto -50px 0;} }
