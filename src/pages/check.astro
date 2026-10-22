@@ -1,0 +1,239 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const items = [
+  { f: 'Attunement', g: 'k', t: 'Ich kann mich schnell in die Situation und die Interessen meines Gegenübers hineinversetzen.' },
+  { f: 'Adaptability', g: 't', t: 'In den letzten Wochen habe ich mein Vorgehen im Gespräch bewusst an den jeweiligen Kunden angepasst.' },
+  { f: 'Clarity', g: 'k', t: 'Ich kann komplexe Produkte so erklären, dass Kunden den Nutzen für sich erkennen.' },
+  { f: 'Durchsetzungsstärke', g: 't', t: 'In meinen letzten Kundengesprächen habe ich am Ende konkret einen nächsten Schritt vereinbart.' },
+  { f: 'Buoyancy', g: 'k', t: 'Nach Absagen oder Rückschlägen bin ich schnell wieder voll handlungsfähig.' },
+  { f: 'Kommunikationskompetenz', g: 't', t: 'Auf meine letzten wichtigen Gespräche habe ich mich schriftlich vorbereitet: Ziel, Fragen, Nutzen für den Kunden.' },
+  { f: 'Fearlessness', g: 'k', t: 'Ich traue mir zu, auch hochrangige Entscheider anzusprechen und zu widersprechen, wenn es nötig ist.' },
+  { f: 'Proaktivität', g: 't', t: 'Im letzten Monat habe ich aktiv neue Kunden oder Ansprechpartner kontaktiert, ohne dass eine Anfrage vorlag.' },
+  { f: 'Learning Agility', g: 'k', t: 'Ich lerne aus Erfahrungen schnell und ändere mein Vorgehen, wenn es nicht funktioniert.' },
+  { f: 'Strategisches Denken', g: 't', t: 'Ich habe meine wichtigsten Kunden zuletzt nach Potenzial priorisiert und dafür einen konkreten Plan gemacht.' },
+];
+const scale = ['Trifft nicht zu', 'Eher nicht', 'Teils, teils', 'Eher ja', 'Trifft voll zu'];
+---
+<Layout
+  title="Vertriebsprofil-Check: Selbsttest für technischen Vertrieb"
+  description="Kostenloser Selbsttest für technischen Vertrieb: Was können Sie, und was setzen Sie im Kundengespräch tatsächlich um? 10 Aussagen, Ergebnis in drei Minuten."
+>
+  <section class="check">
+    <div class="kicker">Selbsttest · 3 Minuten</div>
+    <h1>Vertriebsprofil-Check: Was können Sie, und was tun Sie davon?</h1>
+    <p class="lead">
+      Viele Vertriebsprofis können mehr, als sie im Alltag umsetzen. Dieser Check zeigt in zehn Aussagen, wo Ihr Können und Ihr Tun auseinanderliegen. Kostenlos, ohne Anmeldung, das Ergebnis sehen Sie sofort.
+    </p>
+
+    <form id="check-form" novalidate>
+      {items.map((it, i) => (
+        <fieldset class="q" data-g={it.g} data-f={it.f}>
+          <legend><span class="qn">{String(i + 1).padStart(2, '0')}</span> {it.t}</legend>
+          <div class="opts">
+            {scale.map((label, v) => (
+              <label>
+                <input type="radio" name={`q${i}`} value={v + 1} required />
+                <span class="dot" aria-hidden="true">{v + 1}</span>
+                <span class="lbl">{label}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      ))}
+      <p id="check-error" class="err" hidden>Bitte beantworten Sie alle zehn Aussagen.</p>
+      <button type="submit" class="btn-primary">Ergebnis anzeigen</button>
+    </form>
+
+    <div id="result" class="result" hidden aria-live="polite">
+      <div class="kicker">Ihr Ergebnis</div>
+      <h2 id="r-title"></h2>
+      <p id="r-text"></p>
+
+      <div class="cbs">
+        <div class="cb-row">
+          <div class="cb-label"><span>Können</span><span id="k-val"></span></div>
+          <div class="cb"><div id="k-bar"></div></div>
+        </div>
+        <div class="cb-row">
+          <div class="cb-label"><span>Tun</span><span id="t-val"></span></div>
+          <div class="cb"><div id="t-bar" class="b2"></div></div>
+        </div>
+      </div>
+
+      <h3>Ihre nächsten Schritte</h3>
+      <ul id="r-steps"></ul>
+
+      <div class="cta">
+        <p>Möchten Sie eine ausführlichere Auswertung mit konkreten Übungen? Senden Sie uns Ihr Ergebnis per E-Mail, wir melden uns persönlich bei Ihnen. Erst mit dem Absenden der E-Mail erhalten wir Ihre Angaben.</p>
+        <a id="mail-link" class="btn-primary" href="#">Auswertung anfordern</a>
+      </div>
+
+      <p class="note">Ihre Antworten werden nur in Ihrem Browser ausgewertet und nicht gespeichert.</p>
+    </div>
+
+    <div class="hr-box">
+      <div class="kicker">Für Personalentwicklung und Geschäftsführung</div>
+      <h2>Vertriebsprofile für ganze Teams</h2>
+      <p>
+        Für Unternehmen gibt es das Profil als Grundlage für Trainings: Wo liegen die Lücken im Team, und welche Seminare bringen am meisten? Sprechen Sie mit uns über Seminarkontingente und Inhouse-Formate.
+      </p>
+      <a class="btn-secondary" href="/#angebote">Angebote ansehen</a>
+    </div>
+
+    <div class="explain">
+      <h2>Was der Check misst</h2>
+      <p>
+        Das Modell unterscheidet zwischen <strong>Können</strong>, also den Fähigkeiten, die jemand mitbringt, und <strong>Tun</strong>, also dem Verhalten, das jemand im Alltag tatsächlich zeigt. Es ist angelehnt an Gedanken aus Daniel Pinks Buch „To Sell Is Human“. Jede Seite hat fünf Faktoren.
+      </p>
+      <div class="two">
+        <div>
+          <h3>Können</h3>
+          <ul>
+            <li>Attunement: sich in andere hineinversetzen</li>
+            <li>Buoyancy: nach Rückschlägen handlungsfähig bleiben</li>
+            <li>Clarity: Nutzen klar erklären</li>
+            <li>Fearlessness: auch schwierige Gespräche führen</li>
+            <li>Learning Agility: schnell aus Erfahrung lernen</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tun</h3>
+          <ul>
+            <li>Adaptability: sich im Gespräch anpassen</li>
+            <li>Durchsetzungsstärke: zu Entscheidungen führen</li>
+            <li>Kommunikationskompetenz: Gespräche vorbereiten und strukturieren</li>
+            <li>Proaktivität: aktiv Chancen suchen</li>
+            <li>Strategisches Denken: Kunden nach Potenzial priorisieren</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">
+        Der Check ist eine Selbsteinschätzung zur persönlichen Orientierung. Er ersetzt keine psychologische Diagnostik und keine Personalentscheidung.
+      </p>
+
+      <h2>Häufige Fragen zum Vertriebsprofil-Check</h2>
+      <details>
+        <summary>Für wen ist der Selbsttest gedacht?</summary>
+        <p>Für Menschen im technischen Vertrieb und im Vertrieb erklärungsbedürftiger Produkte, vom Außendienst bis zur Vertriebsleitung. Auch Personalverantwortliche können ihn nutzen, um einen ersten Eindruck zu gewinnen.</p>
+      </details>
+      <details>
+        <summary>Wie lange dauert der Test?</summary>
+        <p>Etwa drei Minuten. Sie beantworten zehn Aussagen auf einer Skala von eins bis fünf und sehen das Ergebnis sofort.</p>
+      </details>
+      <details>
+        <summary>Werden meine Antworten gespeichert?</summary>
+        <p>Nein. Die Auswertung läuft vollständig in Ihrem Browser. Wir erhalten Ihre Angaben nur, wenn Sie uns das Ergebnis selbst per E-Mail senden.</p>
+      </details>
+      <details>
+        <summary>Was passiert nach dem Ergebnis?</summary>
+        <p>Sie bekommen konkrete nächste Schritte angezeigt. Wer mehr will, kann eine ausführliche Auswertung anfordern. Aus dem Check entsteht keine Verpflichtung.</p>
+      </details>
+    </div>
+  </section>
+
+  <style>
+    .check{max-width:780px;margin-left:auto;margin-right:auto;padding-top:170px;}
+    .check h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,4.4vw,46px);line-height:1.15;margin:0 0 20px;}
+    .check h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(22px,3vw,28px);margin:0 0 12px;}
+    .check h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin:26px 0 10px;}
+    .check .lead{font-size:18px;line-height:1.65;color:var(--ink-soft);margin:0 0 36px;}
+    .q{border:0;border-top:1px solid var(--line-soft);margin:0;padding:22px 0;}
+    .q legend{font-size:16.5px;line-height:1.55;color:var(--ink);padding:0;margin-bottom:14px;float:left;width:100%;}
+    .q .opts{clear:both;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+    .qn{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--brass-deep);margin-right:8px;}
+    .opts label{cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:12.5px;line-height:1.3;color:var(--ink-soft);}
+    .opts input{position:absolute;opacity:0;width:1px;height:1px;}
+    .dot{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-soft);transition:all .15s;}
+    .opts label:hover .dot{border-color:var(--brass);}
+    .opts input:checked + .dot{background:var(--brass);border-color:var(--brass-deep);color:#fff;}
+    .opts input:focus-visible + .dot{outline:2px solid var(--brass-deep);outline-offset:2px;}
+    #check-form .btn-primary{margin-top:14px;border:0;cursor:pointer;}
+    .err{color:#8a2b1f;font-size:14.5px;margin:12px 0 0;}
+    .result{margin-top:44px;padding:34px 30px;background:var(--card);border:1px solid var(--line-soft);border-radius:4px;}
+    .result p{line-height:1.7;color:var(--ink-soft);}
+    .cbs{margin:26px 0 8px;}
+    .cb-row{margin-bottom:16px;}
+    .cb-label{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;}
+    .cb{height:12px;background:var(--line-soft);border-radius:6px;overflow:hidden;}
+    .cb div{height:100%;width:0;background:var(--brass);transition:width .6s ease;}
+    .cb div.b2{background:var(--ink);}
+    .result ul{margin:0 0 6px;padding-left:20px;line-height:1.75;color:var(--ink-soft);}
+    .cta{margin-top:28px;padding-top:22px;border-top:1px dashed var(--line);}
+    .cta .btn-primary{display:inline-block;}
+    .note{font-size:13.5px;color:var(--ink-soft);margin-top:18px;}
+    .hr-box{margin-top:56px;padding:32px 30px;border:1px solid var(--line-soft);border-left:3px solid var(--brass);border-radius:4px;}
+    .hr-box p{line-height:1.7;color:var(--ink-soft);margin:0 0 18px;}
+    .explain{margin-top:64px;}
+    .explain p{line-height:1.75;color:var(--ink-soft);}
+    .explain .two{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+    .explain ul{padding-left:20px;line-height:1.75;color:var(--ink-soft);margin:0;}
+    .explain h2:nth-of-type(2){margin-top:48px;}
+    details{border-top:1px solid var(--line-soft);padding:16px 0;}
+    details:last-of-type{border-bottom:1px solid var(--line-soft);}
+    summary{cursor:pointer;font-family:'Fraunces',serif;font-size:17.5px;color:var(--ink);}
+    details p{margin:12px 0 0;}
+    @media (max-width:640px){
+      .check{padding-top:130px;}
+      .q .opts{gap:4px;}
+      .dot{width:38px;height:38px;}
+      .opts .lbl{font-size:10.5px;}
+      .explain .two{grid-template-columns:1fr;gap:6px;}
+      .result,.hr-box{padding:24px 20px;}
+    }
+  </style>
+
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('check-form');
+      var res = document.getElementById('result');
+      var err = document.getElementById('check-error');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var k = 0, t = 0, n = 0, rows = [];
+        var sets = form.querySelectorAll('fieldset.q');
+        for (var i = 0; i < sets.length; i++) {
+          var chk = sets[i].querySelector('input:checked');
+          if (!chk) { err.hidden = false; sets[i].scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+          var v = parseInt(chk.value, 10);
+          rows.push({ f: sets[i].getAttribute('data-f'), g: sets[i].getAttribute('data-g'), v: v });
+          if (sets[i].getAttribute('data-g') === 'k') k += v; else t += v;
+          n++;
+        }
+        err.hidden = true;
+        var gap = k - t, avg = (k + t) / 10, title, text, steps;
+        if (gap >= 4) {
+          title = 'Sie können mehr, als Sie tun';
+          text = 'Ihre Fähigkeiten liegen deutlich über dem, was Sie im Alltag umsetzen. Das ist die häufigste und zugleich beste Ausgangslage: Das Potenzial ist da, es fehlt an Gewohnheiten und Struktur.';
+          steps = ['Legen Sie für die nächsten vier Wochen zwei feste Gewohnheiten fest, zum Beispiel Gesprächsvorbereitung und Vereinbarung eines nächsten Schritts.', 'Planen Sie pro Woche feste Zeit für aktive Kundenansprache ein.', 'Lassen Sie sich von Kollegen oder einem Coach Rückmeldung zu zwei echten Gesprächen geben.'];
+        } else if (gap <= -4) {
+          title = 'Sie sind aktiv, das Fundament lässt sich ausbauen';
+          text = 'Sie setzen mehr um, als Ihre Selbsteinschätzung bei den Fähigkeiten vermuten lässt. Wer so aktiv ist, profitiert besonders davon, die Grundlagen gezielt zu stärken.';
+          steps = ['Wählen Sie die zwei Fähigkeiten mit den niedrigsten Werten und üben Sie diese bewusst.', 'Lassen Sie ein Gespräch aufzeichnen oder reflektieren Sie es mit einer Vertrauensperson.', 'Prüfen Sie, welches Training Ihnen Sicherheit bei komplexen Produkten gibt.'];
+        } else if (avg >= 3.6) {
+          title = 'Können und Tun sind stimmig und stark';
+          text = 'Ihre Fähigkeiten und Ihr Verhalten passen gut zusammen, auf hohem Niveau. Der nächste Schritt ist, Schwächen im Detail zu finden und Ihre Stärken im Team weiterzugeben.';
+          steps = ['Schauen Sie sich die einzelnen Faktoren an und entwickeln Sie den schwächsten gezielt weiter.', 'Geben Sie Ihr Vorgehen im Team weiter, zum Beispiel in einem kurzen Austausch pro Monat.', 'Setzen Sie sich ein anspruchsvolleres Ziel bei Neukunden oder Großkunden.'];
+        } else {
+          title = 'Sie stehen am Anfang, mit gutem Ausgangspunkt';
+          text = 'Können und Tun liegen eng beieinander, auf einem Niveau, das viel Entwicklungsspielraum lässt. Mit gezieltem Training lässt sich hier schnell viel bewegen.';
+          steps = ['Beginnen Sie mit einer einzigen Gewohnheit, zum Beispiel strukturierter Gesprächsvorbereitung.', 'Suchen Sie sich ein Seminar oder Coaching, das Praxisübungen enthält.', 'Wiederholen Sie diesen Check in drei Monaten und vergleichen Sie.'];
+        }
+        document.getElementById('r-title').textContent = title;
+        document.getElementById('r-text').textContent = text;
+        document.getElementById('k-val').textContent = k + ' von 25';
+        document.getElementById('t-val').textContent = t + ' von 25';
+        document.getElementById('k-bar').style.width = (k / 25 * 100) + '%';
+        document.getElementById('t-bar').style.width = (t / 25 * 100) + '%';
+        var ul = document.getElementById('r-steps');
+        ul.innerHTML = '';
+        steps.forEach(function (s) { var li = document.createElement('li'); li.textContent = s; ul.appendChild(li); });
+        var user = 'Fronius', domain = 'AMF-Wien.com';
+        var body = 'Mein Ergebnis im Vertriebsprofil-Check:\nKönnen: ' + k + ' von 25\nTun: ' + t + ' von 25\nEinordnung: ' + title + '\n\nBitte senden Sie mir die ausführliche Auswertung.\n\nName:\nUnternehmen:\n';
+        document.getElementById('mail-link').href = 'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent('Vertriebsprofil-Check: Auswertung anfordern') + '&body=' + encodeURIComponent(body);
+        res.hidden = false;
+        res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    })();
+  </script>
+</Layout>
