@@ -59,6 +59,6 @@ git push origin main
 
 ## Offene Punkte
 
-- Logo/Favicon in `public/` ergänzen
+- ~~Logo/Favicon in `public/` ergänzen~~ erledigt (Quelle: `public/favicon.svg`)
 - LinkedIn-Company-Page-Link im Footer (`src/layouts/Layout.astro`) eintragen, sobald angelegt
 - Domain (amf-wien.com) beim Hoster auf Vercel/Netlify verweisen (DNS)
