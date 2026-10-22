@@ -16,12 +16,12 @@ const items = [
 const scale = ['Trifft nicht zu', 'Eher nicht', 'Teils, teils', 'Eher ja', 'Trifft voll zu'];
 ---
 <Layout
-  title="Vertriebsprofil-Check: Selbsttest für technischen Vertrieb"
-  description="Kostenloser Selbsttest für technischen Vertrieb: Was können Sie, und was setzen Sie im Kundengespräch tatsächlich um? 10 Aussagen, Ergebnis in drei Minuten."
+  title="Vertriebsprofil-Kurzcheck: 2 Minuten für technischen Vertrieb"
+  description="Kostenloser Selbsttest für technischen Vertrieb: Was können Sie, und was setzen Sie im Kundengespräch tatsächlich um? 10 Aussagen, Ergebnis in zwei Minuten."
 >
   <section class="check">
-    <div class="kicker">Selbsttest · 3 Minuten</div>
-    <h1>Vertriebsprofil-Check: Was können Sie, und was tun Sie davon?</h1>
+    <div class="kicker">Kurzcheck · 2 Minuten</div>
+    <h1>Vertriebsprofil-Kurzcheck: Was können Sie, und was tun Sie davon?</h1>
     <p class="lead">
       Viele Vertriebsprofis können mehr, als sie im Alltag umsetzen. Dieser Check zeigt in zehn Aussagen, wo Ihr Können und Ihr Tun auseinanderliegen. Kostenlos, ohne Anmeldung, das Ergebnis sehen Sie sofort.
     </p>
@@ -109,17 +109,20 @@ const scale = ['Trifft nicht zu', 'Eher nicht', 'Teils, teils', 'Eher ja', 'Trif
         </div>
       </div>
       <p class="note">
+        Der Kurzcheck zeigt die Richtung. Das ausführliche Profil mit 45 Fragen, das alle zehn Faktoren einzeln auswertet, ist in Vorbereitung. Wer es als Erste oder Erster nutzen möchte, meldet sich über die Auswertungsanfrage im Ergebnis.
+      </p>
+      <p class="note">
         Der Check ist eine Selbsteinschätzung zur persönlichen Orientierung. Er ersetzt keine psychologische Diagnostik und keine Personalentscheidung.
       </p>
 
-      <h2>Häufige Fragen zum Vertriebsprofil-Check</h2>
+      <h2>Häufige Fragen zum Kurzcheck</h2>
       <details>
-        <summary>Für wen ist der Selbsttest gedacht?</summary>
+        <summary>Für wen ist der Kurzcheck gedacht?</summary>
         <p>Für Menschen im technischen Vertrieb und im Vertrieb erklärungsbedürftiger Produkte, vom Außendienst bis zur Vertriebsleitung. Auch Personalverantwortliche können ihn nutzen, um einen ersten Eindruck zu gewinnen.</p>
       </details>
       <details>
         <summary>Wie lange dauert der Test?</summary>
-        <p>Etwa drei Minuten. Sie beantworten zehn Aussagen auf einer Skala von eins bis fünf und sehen das Ergebnis sofort.</p>
+        <p>Etwa zwei Minuten. Sie beantworten zehn Aussagen auf einer Skala von eins bis fünf und sehen das Ergebnis sofort.</p>
       </details>
       <details>
         <summary>Werden meine Antworten gespeichert?</summary>
@@ -229,8 +232,8 @@ const scale = ['Trifft nicht zu', 'Eher nicht', 'Teils, teils', 'Eher ja', 'Trif
         ul.innerHTML = '';
         steps.forEach(function (s) { var li = document.createElement('li'); li.textContent = s; ul.appendChild(li); });
         var user = 'Fronius', domain = 'AMF-Wien.com';
-        var body = 'Mein Ergebnis im Vertriebsprofil-Check:\nKönnen: ' + k + ' von 25\nTun: ' + t + ' von 25\nEinordnung: ' + title + '\n\nBitte senden Sie mir die ausführliche Auswertung.\n\nName:\nUnternehmen:\n';
-        document.getElementById('mail-link').href = 'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent('Vertriebsprofil-Check: Auswertung anfordern') + '&body=' + encodeURIComponent(body);
+        var body = 'Mein Ergebnis im Vertriebsprofil-Kurzcheck:\nKönnen: ' + k + ' von 25\nTun: ' + t + ' von 25\nEinordnung: ' + title + '\n\nBitte senden Sie mir die ausführliche Auswertung.\n\nName:\nUnternehmen:\n';
+        document.getElementById('mail-link').href = 'mailto:' + user + '@' + domain + '?subject=' + encodeURIComponent('Vertriebsprofil-Kurzcheck: Auswertung anfordern') + '&body=' + encodeURIComponent(body);
         res.hidden = false;
         res.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
