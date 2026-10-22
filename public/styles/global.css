@@ -262,3 +262,4 @@
 @media (max-width:760px){
   .consult-stage{max-width:300px;margin:18px auto 8px 0;}
 }
+.consult-quote-label{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-deep);margin:0 0 10px;}
