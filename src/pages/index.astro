@@ -187,14 +187,16 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
         <div class="offer-num">02</div>
         <div>
           <div class="offer-name">Consulting</div>
-          <blockquote class="consult-quote consult-quote--side">
-            <p>„Strategie entscheidet, wohin der Vertrieb will. Das Gespräch mit dem Kunden entscheidet, ob er ankommt.“</p>
-            <cite>Ante M. Fronius</cite>
-          </blockquote>
+          <figure class="consult-stage">
+            <img src="/images/ante-fronius-stehend.webp" alt="DI Ante M. Fronius, MBA im Beratungsgespräch" width="710" height="752" loading="lazy" />
+            <blockquote class="consult-quote">
+              <p>„Strategie entscheidet, wohin der Vertrieb will. Das Gespräch mit dem Kunden entscheidet, ob er ankommt.“</p>
+              <cite>Ante M. Fronius</cite>
+            </blockquote>
+          </figure>
         </div>
         <div class="offer-desc">
           <div class="consult-card">
-            <img class="consult-figure" src="/images/ante-fronius-stehend.webp" alt="DI Ante M. Fronius, MBA im Beratungsgespräch" width="710" height="752" loading="lazy" />
             <div class="consult-title">Commercial Transformation — Vertrieb und Strategie aus einer Hand</div>
             <p>Wenn sich Vertrieb neu ausrichten muss, etwa wegen neuer Märkte, neuer Produkte oder eines veränderten Kaufverhaltens, reicht ein Training allein nicht. Ich begleite Geschäftsführung und Vertriebsleitung dabei, Strategie und Vertriebsorganisation zusammenzubringen: von der Analyse bis zur nachhaltigen Verankerung.</p>
             <ul class="consult-list">

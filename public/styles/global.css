@@ -253,20 +253,12 @@
 .consult-list li::before{content:"";position:absolute;left:0;top:16px;width:6px;height:6px;background:var(--brass);}
 .consult-list li b{color:var(--ink);font-weight:600;}
 
-/* Foto im Consulting-Block: Figur stützt sich auf die Oberkante der Karte */
-.consult-card{position:relative;margin-top:440px;}
-.consult-figure{position:absolute;right:14px;bottom:100%;width:410px;height:auto;margin-bottom:-1px;pointer-events:none;}
-@media (max-width:760px){
-  .consult-card{margin-top:262px;}
-  .consult-figure{width:250px;right:12px;}
-}
-
-/* Zitat neben dem Consulting-Block */
-.consult-quote{margin:0;padding:0 0 0 20px;border-left:3px solid var(--brass);}
-.consult-quote p{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--ink);margin:0 0 12px;}
+/* Consulting: Foto steht auf der Linie über dem Zitat */
+.consult-stage{margin:20px 0 0;max-width:430px;}
+.consult-stage img{display:block;width:100%;height:auto;margin-bottom:-1px;}
+.consult-quote{margin:0;padding:22px 0 0;border-top:3px solid var(--brass);}
+.consult-quote p{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(21px,2.2vw,26px);line-height:1.35;color:var(--ink);margin:0 0 12px;}
 .consult-quote cite{display:block;font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass-deep);}
-.consult-quote--side{margin-top:44px;max-width:440px;}
-.consult-quote--side p{font-size:clamp(22px,2.3vw,28px);line-height:1.35;}
 @media (max-width:760px){
-  .consult-quote--side{display:none;}
+  .consult-stage{max-width:300px;margin:18px auto 8px 0;}
 }
