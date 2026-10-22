@@ -254,11 +254,11 @@
 .consult-list li b{color:var(--ink);font-weight:600;}
 
 /* Foto im Consulting-Block: Figur stützt sich auf die Oberkante der Karte */
-.consult-card{position:relative;margin-top:240px;}
-.consult-figure{position:absolute;right:26px;bottom:100%;width:220px;height:auto;margin-bottom:-1px;pointer-events:none;}
+.consult-card{position:relative;margin-top:440px;}
+.consult-figure{position:absolute;right:14px;bottom:100%;width:410px;height:auto;margin-bottom:-1px;pointer-events:none;}
 @media (max-width:760px){
-  .consult-card{margin-top:190px;}
-  .consult-figure{width:176px;right:16px;}
+  .consult-card{margin-top:262px;}
+  .consult-figure{width:250px;right:12px;}
 }
 
 /* Zitat neben dem Consulting-Block */
