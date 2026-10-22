@@ -252,3 +252,11 @@
 .consult-list li:last-child{border-bottom:1px solid var(--line-soft);}
 .consult-list li::before{content:"";position:absolute;left:0;top:16px;width:6px;height:6px;background:var(--brass);}
 .consult-list li b{color:var(--ink);font-weight:600;}
+
+/* Foto im Consulting-Block: Figur stützt sich auf die Oberkante der Karte */
+.consult-card{position:relative;margin-top:240px;}
+.consult-figure{position:absolute;right:26px;bottom:100%;width:220px;height:auto;margin-bottom:-1px;pointer-events:none;}
+@media (max-width:760px){
+  .consult-card{margin-top:190px;}
+  .consult-figure{width:176px;right:16px;}
+}
