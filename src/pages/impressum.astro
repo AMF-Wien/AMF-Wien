@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Impressum" description="Impressum von AMF Wien">
+<Layout title="Impressum" description="Impressum von AMF Wien" noindex>
   <section style="max-width:760px;padding-top:170px;">
     <div class="kicker">Rechtliches</div>
     <h1 style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,4vw,44px);margin:0 0 40px;">Impressum</h1>
@@ -10,8 +10,9 @@ import Layout from '../layouts/Layout.astro';
     <p style="line-height:1.8;color:var(--ink-soft);">
       Dipl.-Ing. Ante Mrkonjić Fronius, MBA<br>
       Gewerbeinhaber (Einzelunternehmen)<br>
-      [Adresse entfernt]<br>
-      1050 Wien, Österreich
+      <!-- Adresse als HTML-Entities: fuer Menschen normal lesbar, fuer einfache Adress-Sammler nicht -->
+      &#71;&#105;&#101;&#223;&#97;&#117;&#102;&#103;&#97;&#115;&#115;&#101;&#32;&#53;&#47;&#49;&#53;<br>
+      &#49;&#48;&#53;&#48; Wien, Österreich
     </p>
 
     <h2 style="font-family:'Fraunces',serif;font-size:20px;margin:32px 0 12px;">Kontakt</h2>
@@ -32,7 +33,6 @@ import Layout from '../layouts/Layout.astro';
       GISA-Zahl: 30892538<br>
       Entstehungsdatum: 01.09.2018<br>
       Gemeinde: Wien<br>
-      Anschrift: [Adresse entfernt]<br>
       Anwendbare Rechtsvorschriften: Gewerbeordnung, abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a>
     </p>
 
